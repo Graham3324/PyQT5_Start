@@ -3,22 +3,32 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 
 
-def button_clicked():
-    print(label.setText("Label Clicked"))
+class MyWindow(QMainWindow):
+    def __init__(self):
+        super(MyWindow, self).__init__()
+        self.setGeometry(200, 200, 300, 300)
+        self.setWindowTitle("First Window App")
+        self.initUI()
+
+    def initUI(self):
+        self.label = QtWidgets.QLabel(self)
+        self.label.setText("Label")
+        self.label.move(50, 50)
+        self.button = QtWidgets.QPushButton(self)
+        self.button.setText("Button 1")
+        self.button.clicked.connect(self.button_clicked)
+
+    def button_clicked(self):
+        self.label.setText("Label Clicked")
+        self.update()
+
+    def update(self):
+        self.label.adjustSize
 
 
 def window():
     app = QApplication(sys.argv)
-    win = QMainWindow()
-    win.setGeometry(200, 200, 300, 300)
-    win.setWindowTitle("First Window App")
-
-    label = QtWidgets.QLabel(win)
-    label.setText("Label")
-    label.move(50, 50)
-    button = QtWidgets.QPushButton(win)
-    button.setText("Button 1")
-    button.clicked.connect(button_clicked)
+    win = MyWindow()
 
     win.show()
     sys.exit(app.exec_())
