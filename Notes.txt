@@ -1,0 +1,9 @@
+Notes
+
+Starting to look at PyQT5 as a Python UI
+Need to get insatll insturctions in here:
+    - Normal install with PIP
+        PIP install PyQT5
+    - Need to add the UI Designer tool, not part of tools pack now
+        1. Save UI file from Designer
+        2. Run pyuic5 -x ####.ui -o ####.py
