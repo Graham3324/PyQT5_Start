@@ -1,3 +1,5 @@
+import sys
+
 from test1 import Ui_MainWindow
 
 from PyQt5 import QtWidgets as qtw
@@ -24,9 +26,9 @@ class TestWindow(qtw.QMainWindow):
 
 
 if __name__ == "__main__":
-    app = qtw.QApplication([])
+    app = qtw.QApplication(sys.argv)
 
     tester = TestWindow()
     tester.show()
 
-    app.exec_()
+    sys.exit(app.exec_())
