@@ -64,6 +64,12 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        self.actionAbout.triggered.connect(lambda: self.clicked("About was clicked"))
+        self.actionClose.triggered.connect(lambda: self.clicked("Close was clicked"))
+        self.actionExit.triggered.connect(lambda: self.clicked("Exit was clicked"))
+        self.actionFly.triggered.connect(lambda: self.clicked("Fly was clicked"))
+        self.actionOpen.triggered.connect(lambda: self.clicked("Open was clicked"))
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -77,9 +83,14 @@ class Ui_MainWindow(object):
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
 
+    def clicked(self, text):
+        self.label1.setText(text)
+        self.label1.adjustSize()
+
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
