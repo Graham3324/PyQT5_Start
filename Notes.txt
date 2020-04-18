@@ -7,3 +7,9 @@ Need to get insatll insturctions in here:
     - Need to add the UI Designer tool, not part of tools pack now
         1. Save UI file from Designer
         2. Run pyuic5 -x ####.ui -o ####.py
+
+More interesting approach that subclasses the Designer tool file
+Need to run without creating an executable
+    run pyuic5 #####.ui -o ####.py
+
+Hookup code in test_ind.py, class for window in test1.py
